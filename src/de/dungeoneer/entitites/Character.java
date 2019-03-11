@@ -282,7 +282,7 @@ public class Character implements Comparable<Character> {
      * @return getRolledEntireInitiative
      */
     public int rollInitiative() {
-        int roll = DiceHelper.roll(20);
+        int roll = DiceHelper.roll(10);
 
         setRolledInitiative(roll);
 
