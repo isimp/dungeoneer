@@ -15,6 +15,7 @@ import de.dungeoneer.helper.GroupHelper;
 import de.dungeoneer.helper.LogHelper;
 
 import java.io.IOException;
+import java.security.acl.Group;
 import java.sql.SQLException;
 import java.util.*;
 
@@ -167,7 +168,10 @@ public class Main {
 
                 if (GroupHelper.isGroupAlive(players)) {
                     LogHelper.logDetailledInfo("Keine weiteren Räume gefunden. Spieler haben den Dungeon erfolgreich bezwungen.");
-                    countPlayersAlive++;
+                    if(GroupHelper.isEntireGroupAlive(players)) {
+                        LogHelper.logDetailledInfo("Komplette Gruppe am Leben. Iteration wird als bestanden gewertet.");
+                        countPlayersAlive++;
+                    }
                 }
 
                 for (Character character : players) {

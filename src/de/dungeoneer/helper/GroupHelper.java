@@ -20,6 +20,21 @@ public class GroupHelper {
     }
 
     /**
+     *
+     * needs testing
+     * @param characters
+     * @return
+     */
+    public static boolean isEntireGroupAlive(List<Character> characters) {
+        boolean isAlive = true;
+        for(Character character : characters) {
+            if(!character.isAlive()) isAlive = false;
+        }
+
+        return isAlive;
+    }
+
+    /**
      * Gives a list of alive characters out of a list of characters.
      * @param characters list of characters
      * @return list of alive characters
